@@ -1,6 +1,7 @@
 ## Aplikacja
 Aplikajca stworzona została przy użyciu NODE.js z frameworkiem Express.js. Pozwala ona na wybór kraju z listy, następnie wyświetla się lista dostępnych dla danego kraju miast. Po wybraniu kraju oraz miasta i kliknięciu przycisku wyświetla się pogoda dla danego miasta. W celu pobierania tych danych oraz ich wyświetlenia użyto języka Javascript oraz OpenWeatherMap - usługi internetowej udostępniającej globalne dane pogodowe.
 
+
 ### Plik serwerowy server.js
 ```
 const express = require('express');
@@ -20,6 +21,7 @@ app.listen(PORT, () => {
 });
 ```
 źródło dla serwera: https://www.geeksforgeeks.org/steps-to-create-an-express-js-application/
+
 
 ### Plik index.html
 ```
@@ -174,6 +176,7 @@ app.listen(PORT, () => {
 </html>
 ```
 
+
 ## Plik Dockerfile
 ```
 FROM node:20-alpine AS builder
@@ -206,28 +209,36 @@ CMD ["node", "server.js"]
 ```
 Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji finalnego obrazu, do którego kopiowane są tylko niezbędne pliki. Pierwszy obraz (node:20-alpine) jest wykorzystywany jako builder i służy do przygotowania aplikacji. Potrzebne zależności są instalowane przed skopiowaniem wszystkich plików. Wykorzystano również healthcheck w celu oceny jakości stworzonego kontnera.
 
+
 ## Polecenia oraz zrzuty ekranowe
 #### Budowanie obrazu:
-docker build -t zadanie1 .
+    docker build -t zadanie1 .
+
 
 #### Uruchomienie obrazu:
-docker run -p 3000:3000 --name zadanie1kontener zadanie1
+    docker run -p 3000:3000 --name zadanie1kontener zadanie1
 ![Uruchomienie aplikacji (cmd)](Obrazy/uruchomienie.png)
 
+
 #### Sprawdzenie healthcheck:
-docker ps
+    docker ps
 ![Zrzut ekranu healthcheck](Obrazy/healthcheck.png)
+
 
 #### Działanie aplikacji:
 ![Działanie aplikacji](Obrazy/aplikacja.png)
 
+
 #### Pozyskanie informacji z logów:
-docker logs
+    docker logs
 ![Zrzut ekranu logs](Obrazy/logi.png)
 
-#### Rozmiar obrazu oraz warstwy:
-Sprawdzenie rozmiaru obrazu: docker images
+
+#### Rozmiar obrazu:
+    docker images
 ![Rozmiar obrazu](Obrazy/rozmiar.png)
 
-Sprawdzenie warstw obrazu: docker inspect
+
+#### Warstwy:
+    docker inspect
 ![Warstwy obrazu](Obrazy/warstwy.png)
