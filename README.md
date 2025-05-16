@@ -240,5 +240,5 @@ Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji fina
 
 
 #### Warstwy:
-    docker inspect
+    docker history
 ![Warstwy obrazu](Obrazy/warstwy.png)
