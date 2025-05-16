@@ -20,7 +20,6 @@ app.listen(PORT, () => {
     console.log(`Port TCP: ${PORT}`);
 });
 ```
-źródło dla serwera: https://www.geeksforgeeks.org/steps-to-create-an-express-js-application/
 
 
 ### Plik index.html
@@ -242,3 +241,4 @@ Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji fina
 #### Warstwy:
     docker history
 ![Warstwy obrazu](Obrazy/warstwy.png)
+
