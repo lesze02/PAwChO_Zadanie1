@@ -1,5 +1,5 @@
 ## Aplikacja
-Aplikajca stworzona została przy użyciu NODE.js z frameworkiem Express.js. Pozwala ona na wybór kraju z listy, następnie wyświetla się lista dostępnych dla danego kraju miast. Po wybraniu kraju oraz miasta i kliknięciu przycisku wyświetla się pogoda dla danego miasta. W celu pobierania tych danych oraz ich wyświetlenia użyto języka Javascript oraz OpenWeatherMap - usługi internetowej udostępniającej globalne dane pogodowe.
+Aplikacja stworzona została przy użyciu NODE.js z frameworkiem Express.js. Pozwala ona na wybór kraju z listy, następnie wyświetla się lista dostępnych dla danego kraju miast. Po wybraniu kraju oraz miasta i kliknięciu przycisku wyświetla się pogoda dla danego miasta. W celu pobierania tych danych oraz ich wyświetlenia użyto języka Javascript oraz OpenWeatherMap - usługi internetowej udostępniającej globalne dane pogodowe.
 
 
 ### Plik serwerowy server.js
@@ -206,7 +206,7 @@ HEALTHCHECK --interval=10s --timeout=1s \
 
 CMD ["node", "server.js"]
 ```
-Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji finalnego obrazu, do którego kopiowane są tylko niezbędne pliki. Pierwszy obraz (node:20-alpine) jest wykorzystywany jako builder i służy do przygotowania aplikacji. Potrzebne zależności są instalowane przed skopiowaniem wszystkich plików. Wykorzystano również healthcheck w celu oceny jakości stworzonego kontnera.
+Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji finalnego obrazu, do którego kopiowane są tylko niezbędne pliki. Pierwszy obraz (node:20-alpine) jest wykorzystywany jako builder i służy do przygotowania aplikacji. Potrzebne zależności są instalowane przed skopiowaniem wszystkich plików. Wykorzystano również healthcheck w celu oceny jakości stworzonego kontenera.
 
 
 ## Polecenia oraz zrzuty ekranowe
@@ -240,5 +240,5 @@ Dockerfile wykorzystuje technikę multi-stage building w celu optymalizacji fina
 
 #### Warstwy:
     docker history
-![Warstwy obrazu](Obrazy/warstwy.png)
+![Warstwy obrazu](Obrazy/warstwy1.png)
 
